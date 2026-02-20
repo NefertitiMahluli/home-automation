@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c16e5031-37f9-405d-b22e-09aceb2f70b6" name="Changes" comment="Project 1: Image organizer (by date) with added collision detection to prevent overwriting files" />
+    <list default="true" id="c16e5031-37f9-405d-b22e-09aceb2f70b6" name="Changes" comment="Project 1: Included try/except to create a lid tight program">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01-chronos-organizer/organizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/01-chronos-organizer/organizer.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -123,7 +126,23 @@
       <option name="project" value="LOCAL" />
       <updated>1771571337946</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Project 1: Included try/except to create a lid tight program">
+      <option name="closed" value="true" />
+      <created>1771571889621</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1771571889621</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Project 1: Included try/except to create a lid tight program">
+      <option name="closed" value="true" />
+      <created>1771571906112</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1771571906112</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -140,6 +159,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit: Added project roadmap" />
     <MESSAGE value="Project 1: Image organizer (by date) with added collision detection to prevent overwriting files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Project 1: Image organizer (by date) with added collision detection to prevent overwriting files" />
+    <MESSAGE value="Project 1: Included try/except to create a lid tight program" />
+    <option name="LAST_COMMIT_MESSAGE" value="Project 1: Included try/except to create a lid tight program" />
   </component>
 </project>
