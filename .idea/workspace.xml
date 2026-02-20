@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c16e5031-37f9-405d-b22e-09aceb2f70b6" name="Changes" comment="Project 1: Included try/except to create a lid tight program">
+    <list default="true" id="c16e5031-37f9-405d-b22e-09aceb2f70b6" name="Changes" comment="Project 1 Final: Production-ready photo organizer with dated CSV reporting, Excel UTF-8 support, and error handling.">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/01-chronos-organizer/organizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/01-chronos-organizer/organizer.py" afterDir="false" />
     </list>
@@ -142,7 +143,15 @@
       <option name="project" value="LOCAL" />
       <updated>1771571906112</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Project 1 Final: Production-ready photo organizer with dated CSV reporting, Excel UTF-8 support, and error handling.">
+      <option name="closed" value="true" />
+      <created>1771573478204</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1771573478204</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -160,6 +169,7 @@
     <MESSAGE value="Initial commit: Added project roadmap" />
     <MESSAGE value="Project 1: Image organizer (by date) with added collision detection to prevent overwriting files" />
     <MESSAGE value="Project 1: Included try/except to create a lid tight program" />
-    <option name="LAST_COMMIT_MESSAGE" value="Project 1: Included try/except to create a lid tight program" />
+    <MESSAGE value="Project 1 Final: Production-ready photo organizer with dated CSV reporting, Excel UTF-8 support, and error handling." />
+    <option name="LAST_COMMIT_MESSAGE" value="Project 1 Final: Production-ready photo organizer with dated CSV reporting, Excel UTF-8 support, and error handling." />
   </component>
 </project>
