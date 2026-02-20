@@ -4,55 +4,64 @@ from datetime import datetime
 from plyer import notification
 
 # --- CONFIGURATION ---
-# Use the 'r' before the quotes for Windows paths!
+# Note: Ensure these folders exist on your Desktop!
 SOURCE_DIR = r'C:\Users\Nia\OneDrive\Desktop\Messy_Photos'
 DEST_DIR = r'C:\Users\Nia\OneDrive\Desktop\Organized_Photos'
 
+
 def run_organizer():
-    # print("DEBUG: Function started...")
     print(f"🚀 Starting Chronos Organizer...")
     print(f"📂 Scanning: {SOURCE_DIR}")
 
-    # Create destination if it doesn't exist
+    # 1. PATH VALIDATION
+    if not os.path.exists(SOURCE_DIR):
+        print(f"❌ ERROR: Source directory {SOURCE_DIR} not found!")
+        return
+
     if not os.path.exists(DEST_DIR):
         os.makedirs(DEST_DIR)
         print(f"📁 Created main destination folder: {DEST_DIR}")
 
     moved_count = 0
 
-    # Loop through the files
+    # 2. FILE PROCESSING LOOP
     for filename in os.listdir(SOURCE_DIR):
-        # Filter for images
+        # Ignore hidden system files or folders
+        if filename.startswith('.') or not '.' in filename:
+            continue
+
+        # Filter for specific image types
         if filename.lower().endswith(('.png', '.jpg', '.jpeg')):
             file_path = os.path.join(SOURCE_DIR, filename)
 
-            # Get the date the file was last changed
-            timestamp = os.path.getmtime(file_path)
-            date_obj = datetime.fromtimestamp(timestamp)
+            try:
+                # Get the date and format the folder name (e.g., 2024-October)
+                timestamp = os.path.getmtime(file_path)
+                date_obj = datetime.fromtimestamp(timestamp)
+                folder_name = date_obj.strftime('%Y-%B')
+                target_folder = os.path.join(DEST_DIR, folder_name)
 
-            # Create a folder name like "2024-October"
-            folder_name = date_obj.strftime('%Y-%B')
-            target_folder = os.path.join(DEST_DIR, folder_name)
+                if not os.path.exists(target_folder):
+                    os.makedirs(target_folder)
 
-            # Create the subfolder if it doesn't exist
-            if not os.path.exists(target_folder):
-                os.makedirs(target_folder)
+                final_destination = os.path.join(target_folder, filename)
 
-            # --- SAFETY CHECK ---
-            # Define exactly where the file is going
-            final_destination = os.path.join(target_folder, filename)
+                # 3. COLLISION DETECTION
+                if os.path.exists(final_destination):
+                    print(f"⚠️  SKIP: '{filename}' already exists in {folder_name}.")
+                    continue
 
-            # Check if a file with this name already exists there
-            if os.path.exists(final_destination):
-                print(f"⚠️  SKIP: '{filename}' already exists in {folder_name}. No move performed.")
-                continue  # Skip to the next file in the list
+                # 4. PERMISSION & MOVE LOGIC
+                shutil.move(file_path, final_destination)
+                print(f"✅ Moved: {filename} -> {folder_name}")
+                moved_count += 1
 
-            # Move the file if the check passes
-            shutil.move(file_path, final_destination)
-            print(f"✅ Moved: {filename} -> {folder_name}")
-            moved_count += 1
+            except PermissionError:
+                print(f"❌ ERROR: {filename} is in use by another program.")
+            except Exception as e:
+                print(f"❌ UNEXPECTED ERROR with {filename}: {e}")
 
-    # Send the Windows notification
+    # 5. USER FEEDBACK
     notification.notify(
         title='Chronos Pipeline',
         message=f'Success! {moved_count} files organized.',
