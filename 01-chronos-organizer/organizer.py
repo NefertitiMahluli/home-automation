@@ -4,9 +4,15 @@ from datetime import datetime
 from plyer import notification
 
 # --- CONFIGURATION ---
-SOURCE_DIR = r'C:\Users\Nia\OneDrive\Desktop\Messy_Photos'
-DEST_DIR = r'C:\Users\Nia\OneDrive\Desktop\Organized_Photos'
+# This works for ANY user on ANY Windows computer!
+HOME = os.path.expanduser("~")
+#if your filepath is linked to OneDrive use this
+SOURCE_DIR = os.path.join(HOME, "OneDrive", "Desktop", "Messy_Photos")
+DEST_DIR = os.path.join(HOME, "OneDrive", "Desktop", "Organized_Photos")
 
+# *****if not, use this:*****
+# SOURCE_DIR = os.path.join(HOME, "Desktop", "Messy_Photos")
+# DEST_DIR = os.path.join(HOME, "Desktop", "Organized_Photos")
 
 def run_organizer():
     # 1. Ensure the destination exists
